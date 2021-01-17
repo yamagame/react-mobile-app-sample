@@ -25,6 +25,7 @@ export const Page: React.FC<PageProps> = ({
     const onChangeState = (e: any) => {
       setOnline(window.navigator.onLine)
     }
+    setOnline(window.navigator.onLine)
     window.addEventListener('offline', onChangeState)
     window.addEventListener('online', onChangeState)
     return () => {

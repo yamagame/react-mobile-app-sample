@@ -14,16 +14,22 @@ function App() {
   return (
     <Router>
       <Switch>
-        <Route path="/login">
+        <Route path={`${process.env.PUBLIC_URL}/login`}>
           <Login />
         </Route>
-        <Route path="/signup">
+        <Route path={`${process.env.PUBLIC_URL}/signup`}>
           <SignUp />
         </Route>
-        <Route path="/user">
+        <Route path={`${process.env.PUBLIC_URL}/user`}>
           <User />
         </Route>
-        <Route exact path={['/top', '/']}>
+        <Route
+          exact
+          path={[
+            `${process.env.PUBLIC_URL}/top`,
+            `${process.env.PUBLIC_URL}/`,
+          ]}
+        >
           <Top />
         </Route>
       </Switch>

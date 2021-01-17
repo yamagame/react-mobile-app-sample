@@ -28,7 +28,7 @@
   },
   "scripts": {
     "start": "craco start",
-    "build": "craco build",
+    "build": "PUBLIC_URL=/react-mobile-app-sample craco build",
     "test": "craco test",
     "serve": "serve -d build",
     "eject": "react-scripts eject",

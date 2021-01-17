@@ -23,7 +23,7 @@ export const User: React.FC<UserProps> = () => {
   const [counter, setCounter] = React.useState(0)
   React.useEffect(() => {
     if (!user) {
-      history.push('/')
+      history.push(`${process.env.PUBLIC_URL}/`)
     }
   }, [user, history])
   const onLogin = () => {}
@@ -39,7 +39,7 @@ export const User: React.FC<UserProps> = () => {
       FallbackComponent={ErrorFallback()}
       onReset={() => {
         setCounter(0)
-        history.push('/user')
+        history.push(`${process.env.PUBLIC_URL}/user`)
       }}
     >
       <Page

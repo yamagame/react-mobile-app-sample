@@ -25,7 +25,7 @@ export const SignUp: React.FC<SignUpProps> = () => {
   const [password, setPassword] = React.useState('')
   React.useEffect(() => {
     if (selector.user) {
-      history.push('/user')
+      history.push(`${process.env.PUBLIC_URL}/user`)
     }
   }, [selector, history])
   const onLogin = () => {}
@@ -37,7 +37,7 @@ export const SignUp: React.FC<SignUpProps> = () => {
     }
   }
   const onCancel = () => {
-    history.push('/')
+    history.push(`${process.env.PUBLIC_URL}/`)
   }
   const onChangeAccountId = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -53,7 +53,7 @@ export const SignUp: React.FC<SignUpProps> = () => {
     <ErrorBoundary
       FallbackComponent={ErrorFallback()}
       onReset={() => {
-        history.push('/signup')
+        history.push(`${process.env.PUBLIC_URL}/signup`)
       }}
     >
       <Page

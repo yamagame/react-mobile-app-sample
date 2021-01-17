@@ -25,7 +25,7 @@ export const Login: React.FC<LoginProps> = () => {
   const [password, setPassword] = React.useState('')
   React.useEffect(() => {
     if (selector.user) {
-      history.push('/user')
+      history.push(`${process.env.PUBLIC_URL}/user`)
     }
   }, [selector, history])
   const onLogin = () => {}
@@ -37,7 +37,7 @@ export const Login: React.FC<LoginProps> = () => {
     }
   }
   const onCancel = () => {
-    history.push('/')
+    history.push(`${process.env.PUBLIC_URL}/`)
   }
   const onChangeAccountId = (
     e: React.ChangeEvent<HTMLInputElement>
@@ -53,7 +53,7 @@ export const Login: React.FC<LoginProps> = () => {
     <ErrorBoundary
       FallbackComponent={ErrorFallback()}
       onReset={() => {
-        history.push('/login')
+        history.push(`${process.env.PUBLIC_URL}/login`)
       }}
     >
       <Page

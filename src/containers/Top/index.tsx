@@ -19,21 +19,21 @@ export const Top: React.FC<TopProps> = () => {
   >((state) => state.user)
   React.useEffect(() => {
     if (user) {
-      history.push('/user')
+      history.push(`${process.env.PUBLIC_URL}/user`)
     }
   }, [user, history])
   const onLogin = () => {
-    history.push('/login')
+    history.push(`${process.env.PUBLIC_URL}/login`)
   }
   const onLogout = () => {}
   const onCreateAccount = () => {
-    history.push('/signup')
+    history.push(`${process.env.PUBLIC_URL}/signup`)
   }
   return (
     <ErrorBoundary
       FallbackComponent={ErrorFallback()}
       onReset={() => {
-        history.push('/top')
+        history.push(`${process.env.PUBLIC_URL}/top`)
       }}
     >
       <Page
